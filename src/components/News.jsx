@@ -1,6 +1,7 @@
 import { Button, Card, Col, Flex, Row, Typography } from "antd";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
 import moment from "moment";
+import Loader from "./Loader";
 
 const { Text, Title } = Typography;
 
@@ -29,7 +30,7 @@ const News = ({ simplified }) => {
   const result =  data?.news;
   // console.log(result)
 
-  if (isFetching) return <div>Loading...</div>;
+  if (isFetching) return <Loader/>
 
   return (
     <>

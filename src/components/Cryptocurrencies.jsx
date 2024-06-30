@@ -3,13 +3,14 @@ import React, { useState } from 'react'
 import { useGetCryptosQuery } from '../services/coinsApi'
 import { Link } from 'react-router-dom';
 import millify from 'millify';
+import Loader from './Loader';
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
   const { data, isFetching } = useGetCryptosQuery(count);
   const [crypto, setCrypto] = useState(data?.data?.coins);
 
-  if (isFetching) return <div>Loading...</div>;
+  if (isFetching) return <Loader/>
 
 
   return (

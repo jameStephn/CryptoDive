@@ -6,11 +6,12 @@ import Cryptocurrencies from "./Cryptocurrencies";
 import News from "./News";
 const { Title  } = Typography;
 import "../App.css"
+import Loader from "./Loader";
 
 const Homepage = () => {
   const { data, isFetching , isError } = useGetCryptosQuery(10); 
   const globalStats = data?.data?.stats;
-  if(isFetching) return <div>Loading...</div>;
+  if(isFetching) return <Loader/>
   if (isError) return <div>Error</div>;
   return (
     <div className="homepage-container" style={{padding:10}}>

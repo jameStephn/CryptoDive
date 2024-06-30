@@ -25,12 +25,7 @@ const Navbar = () => {
       icon: <MoneyCollectOutlined />,
       link: '/cryptocurrencies',
     },
-    {
-      label: 'Exchanges',
-      key: '3',
-      icon: <BulbOutlined />,
-      link: '/exchanges',
-    },
+ 
     {
       label: 'News',
       key: '4',

@@ -7,6 +7,7 @@ import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCi
 
 import { useGetCoinQuery, useGetCoinHistoryQuery } from '../services/coinsApi';
 import LineChart from './LineChart';
+import Loader from './Loader';
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -18,7 +19,7 @@ const CryptoDetails = () => {
   const { data: coinHistory } = useGetCoinHistoryQuery({ coinId, timePeriod });
   const coin = data?.data?.coin;
   console.log(coinHistory)
-  if (isFetching) return <div>Loading...</div>;
+  if (isFetching) return <Loader/>;
 
   const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
 
